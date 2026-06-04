@@ -1,0 +1,93 @@
+# palindrome or not 
+s = input("Enter a string: ")
+
+if s == s[::-1]:
+    print("Palindrome")
+else:
+    print("Not a palindrome")
+
+
+
+#Buzz Number
+
+num = int(input("Enter a number: "))
+
+if num % 7 == 0 or num % 10 == 7:
+    print(num, "is a Buzz Number")
+else:
+    print(num, "is not a Buzz Number")
+
+
+#perfect number
+
+num = int(input("Enter a number: "))
+sum_divisors=0
+for i in range(1,num):
+    if num % i ==0:
+        sum_divisors +=i
+if sum_divisors == num:
+    print(num, "is a perfect number")
+else:
+    print(num, "is not a perfect Number")
+
+
+# Happy Number
+
+def is_happy(n):
+    seen = set()
+
+    while n != 1 and n not in seen:
+        seen.add(n)
+        n = sum(int(digit) ** 2 for digit in str(n))
+
+    return n == 1
+
+
+# Example usage
+num = int(input("Enter a number: "))
+
+if is_happy(num):
+    print(f"{num} is a Happy Number")
+else:
+    print(f"{num} is not a Happy Number")
+
+
+#Prime Number
+
+def is_prime(n):
+    if n <= 1:
+        return False
+
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return False
+
+    return True
+
+
+num = int(input("Enter a number: "))
+
+if is_prime(num):
+    print(f"{num} is a Prime Number")
+else:
+    print(f"{num} is not a Prime Number")
+
+
+#factorial Number
+
+factorial = 1
+
+for i in range(1, 11):
+    factorial *= i
+    print(f"Factorial of {i} = {factorial}")
+
+
+#Fibonacci Number
+
+def fibonacci(n):
+    a, b = 0, 1
+    for _ in range(n):
+        print(a, end=" ")
+        a, b = b, a + b
+
+fibonacci(10)
